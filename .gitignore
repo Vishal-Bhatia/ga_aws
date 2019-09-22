@@ -7,3 +7,4 @@ ml_deployment_ga/*
 2019-09-15_Practice_10.4-OOP.py
 *.pem
 *.pdf
+*.gitignore
