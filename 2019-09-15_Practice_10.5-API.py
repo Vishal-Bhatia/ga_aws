@@ -42,7 +42,7 @@ def calc_std():
     return str(round((stdev/len(arr))**0.5, 4))
 
 if __name__ == "__main__":
-    app.run(host = "localhost", port = 80, debug = True)
+    app.run(host = "0.0.0.0", port = 80, debug = True)
 
 
 #%%
