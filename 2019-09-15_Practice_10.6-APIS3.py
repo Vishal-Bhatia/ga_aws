@@ -15,11 +15,16 @@
 
 #%%
 ##Writing code for API hosting
+import boto3
 import json
 import flask
 from flask import Flask, request
 
 app = Flask(__name__)
+
+s3conn = boto3.resource("s3")
+obj = s3conn.get_object(Bucket = "awsintrovb", Key = "2019-09-15_Practice_10.6-APIS3")
+arr = obj.get()["Body"].read()
 
 @app.route("/test", methods = ["GET"])
 def test_api():
@@ -43,6 +48,5 @@ def calc_std():
 
 if __name__ == "__main__":
     app.run(host = "0.0.0.0", port = 80, debug = True)
-
 
 #%%
