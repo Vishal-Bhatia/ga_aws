@@ -23,7 +23,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 s3conn = boto3.resource("s3")
-obj = s3conn.get_object(Bucket = "awsintrovb", Key = "awsintrovb/databin/")
+obj = s3conn.get_object(Bucket = "awsintrovb", Key = "awsintrovb/databin/testarr.json")
 arr = obj.get()["Body"].read()
 
 @app.route("/test", methods = ["GET"])
